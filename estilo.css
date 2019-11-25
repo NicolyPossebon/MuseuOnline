@@ -1,0 +1,64 @@
+/* COR DE FUNDO */
+body{
+	background-color: #ADD8E6;
+}
+
+/* COR DE FUNDO DA NAV */
+.fundo{
+    background-color: white;
+    padding: 20px;
+    border:solid 0.5px;
+    box-shadow: 5px 5px 5px 0px;
+}
+
+/* CSS LISTAGEM DAS POSTAGENS */
+.titulo{
+	font-size:20px;
+	font-style:italic;
+	text-align: center;
+	font-weight: bold;
+}
+
+.texto{
+	font-size:18px;
+	font-style:italic;
+	text-align: center;
+}
+
+
+.fotoperfilpostagens{
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+}
+
+.linhapostagens{
+	background-color: darkblue;
+    padding: 20px;
+    border:solid 0.5px;
+    box-shadow: 5px 5px 5px 0px;
+}
+
+/* CSS DO PERFIL - DADOS DO USUÁRIO*/
+.divperfil {
+    text-align: center;
+    padding: 30px;
+    height: 350px;
+    background: #899e91;
+    box-shadow: 0px 5px 5px grey;
+}
+
+
+.fotoperfil{
+	width: 225px;
+	height: 225px;
+	border-radius: 50%;
+	box-shadow: 0 4px 8px grey;	
+}
+.usernameperfil{
+	margin-top: 14px;
+	color: black;
+	font-size:25px;
+	font-style:italic;
+	text-align: center;
+}

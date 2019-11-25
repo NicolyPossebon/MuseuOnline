@@ -135,7 +135,7 @@ $result = mysqli_query($conectar, $sql);
           $usuario = "SELECT * FROM usuario WHERE id_usuario = $id_usuario";
           $result_usuario = mysqli_query($conectar, $usuario);
           foreach ($result_usuario as $informacoes_usuario) {
-              echo "<div class='titulo'> Autor: </div> ".$informacoes_usuario['nome'];
+              echo "<div class='titulo'> Autor: </div> ";
               // echo "<img  class='fotoperfilpostagens' src='".$informacoes_usuario['foto']."'> ";
               echo $informacoes_usuario['nome']."  ";
               echo $informacoes_usuario['email'];
@@ -170,7 +170,7 @@ $result = mysqli_query($conectar, $sql);
               }else if ($foto['tipo_arquivo'] == "audio"){
                   echo "<audio preload='none' controls='controls'>
                           <source src='".$foto['endereco_arquivo']."'/>
-                        </audio> <br>";
+                        </audio> <br> </div>";
               }
             }
 

@@ -51,6 +51,22 @@
             </div>
 
             <div class="col-auto">
+            <center>
+            <i class="fas fa-user-circle fa-7x mrgin"></i>
+            </center>
+            <?php 
+            if(isset($_SESSION['usuario_existe'])) {
+                echo "<center>";
+                echo "<span> <br>".$_SESSION['usuario_existe']."</span>";
+                echo "<center>";
+
+            }
+            
+            ?>
+        </div>
+        <div class="col-auto">
+
+            <div class="col-auto">
             <label>Nome:</label>
             <input type="text"  name="nome" required class="form-control" />
             </div>

@@ -48,70 +48,7 @@ include "conexao.php";
   </div>
 </nav>
 <?php
-/* CÓDIGO FUNCIONANDO MAS SEM CSS
 
-$sql = "select * from postagens where status_moderacao = 1 and ano_postagem between 1960 and 1969";
-$result = mysqli_query($conectar, $sql);
-
-//FORECHA POSTAGENS
-foreach ($result as $postagens) {
-    $id = $postagens['id_postagem'];
-    $id_usuario = $postagens['id_usuario'];
-    $ano = $postagens['ano_postagem'];
-
-
-          //PATE DO USUÁRIO
-          $usuario = "SELECT * FROM usuario WHERE id_usuario = $id_usuario";
-          $result_usuario = mysqli_query($conectar, $usuario);
-          foreach ($result_usuario as $informacoes_usuario) {
-             echo "<img width='100' class='fotoperfilpostagens' src='".$informacoes_usuario['foto']."'> ";
-            echo $informacoes_usuario['nome']."  ";
-            echo $informacoes_usuario['email']."<br>";
-          }
-
-
-   echo  $postagens['titulo']."<br>";
-   echo  $postagens['descricao_postagem']."<br>";
-   echo  $postagens['ano_postagem']."<br>";
- 
-//CURTIDAS
-  $selecionacurtidas = "SELECT * FROM curtidas WHERE id_postagem = $id";
-  $sql1 = mysqli_query($conectar, $selecionacurtidas);
-  $contacurtidas = mysqli_num_rows($sql1);
-  if($contacurtidas > 1){
-    echo $contacurtidas." curtiram <br> <br>";
-  }
-
-      //ARQUIVOS (ÁUDIO E FOTO)
-      $sql1 = "SELECT * FROM arquivos WHERE id_postagem = $id";
-      $result2 = mysqli_query($conectar, $sql1);
-
-      foreach($result2 as $foto){
-        if($foto['tipo_arquivo'] == "foto"){
-            echo "<img width='250' src='".$foto['endereco_arquivo']."'> <br>";
-        }else if ($foto['tipo_arquivo'] == "audio"){
-          echo "<audio preload='none' controls='controls'>
-                  <source src='".$foto['endereco_arquivo']."'/>
-                  </audio> <br>";
-        }
-  }
-
-  if(isset($_SESSION['usuario'])){
-    $select = "SELECT * FROM curtidas WHERE id_postagem = $id and id_usuario = ".$_SESSION['usuario'];
-          $puxa = mysqli_query($conectar, $select); 
-          $rows = mysqli_num_rows($puxa);
-
-          if ($rows == 1){
-            echo "<a href='curtir.php?id=$id&ano=$ano'>Descurtir </a> ";
-          } else{
-            echo "<a href='curtir.php?id=$id&ano=$ano'> Curtir </a> ";
-          }  
-
-          //DENÚNCIA
-          echo "<a href='denunciar.php?id=$id&ano=$ano'> Denunciar </a> <br>"; 
-echo "<p>";
-}
-*/
 
 //TESTANDO CARDS
 echo "<center> <p>";
@@ -133,7 +70,7 @@ $result = mysqli_query($conectar, $sql);
           $usuario = "SELECT * FROM usuario WHERE id_usuario = $id_usuario";
           $result_usuario = mysqli_query($conectar, $usuario);
           foreach ($result_usuario as $informacoes_usuario) {
-              echo "<div class='titulo'> Autor: </div> ".$informacoes_usuario['nome'];
+              echo "<div class='titulo'> Autor: </div> ";
               // echo "<img  class='fotoperfilpostagens' src='".$informacoes_usuario['foto']."'> ";
               echo $informacoes_usuario['nome']."  ";
               echo $informacoes_usuario['email'];
@@ -168,7 +105,7 @@ $result = mysqli_query($conectar, $sql);
               }else if ($foto['tipo_arquivo'] == "audio"){
                   echo "<audio preload='none' controls='controls'>
                           <source src='".$foto['endereco_arquivo']."'/>
-                        </audio> <br>";
+                        </audio> <br> </div>";
               }
             }
 

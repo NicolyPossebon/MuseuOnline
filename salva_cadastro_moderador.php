@@ -1,6 +1,6 @@
 <?php
 	 
-	 include "conexao.php";
+	include "conexao.php";
 
 	$nome = $_POST['nome'];
 	$email = $_POST['email'];
@@ -35,23 +35,24 @@
                             echo "Registro inserido com sucesso";
                             header('location: home_adm.php');
                         }else {
-                            echo "Erro ao inserir registro." . mysqli_error($conectar);
+                            //echo "Erro ao inserir registro." . mysqli_error($conectar);
                         }
 
                 }else {
                     $_SESSION['usuario_existe'] = true;
                     echo "Desculpe esse usuario já existe";
+                    header('location:cadastro_moderador.php');
                     exit;
                 }
             } else {
-                $mensagem ="não foi possivel fazer o upload.";
+               // $mensagem ="não foi possivel fazer o upload.";
             }
 
         }else{
-            $mensagem = "Formato inválido";
+            //$mensagem = "Formato inválido";
         }
 
-        echo $mensagem;
+        //echo $mensagem;
     }
 
 

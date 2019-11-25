@@ -46,6 +46,7 @@
 		echo "<div class='card' style='width: 50rem;'>";
 
 		echo "<div class='titulo'>".$postagens['titulo']."</div>";
+		echo "<hr>";
 		
 		//echo $postagens['id_postagem'];
 
@@ -76,6 +77,7 @@
                   echo "<audio preload='none' controls='controls'>
                           <source src='".$foto['endereco_arquivo']."'/>
                         </audio> <br>";
+                   echo "</div>";
               }
             }
 
