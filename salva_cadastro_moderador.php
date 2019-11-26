@@ -1,5 +1,5 @@
 <?php
-	 
+	session_start();
 	include "conexao.php";
 
 	$nome = $_POST['nome'];
@@ -7,9 +7,10 @@
 	$senha = md5($_POST['senha']);
 	$tipo = '0';
 
-  
-    if(isset($_FILES['foto'])){
+    //var_dump($_FILES['foto']);
 
+    if(isset($_FILES['foto']['name'][0])){
+       
         $extensoes_permitidas = array("png", "jpeg", "jpg");
         $extensao = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
 
@@ -21,42 +22,55 @@
 
 
              if(move_uploaded_file($temporario, $pasta.$foto)){
-                $mensagem = "Upload feito com sucesso";
+                //$mensagem = "Upload feito com sucesso";
 
-                $sql = "select * from usuario where nome = '$nome', email = '$email'";
+                $sql = "select * from usuario where email = '$email'";
                 $result = mysqli_query($conectar, $sql);
                 $row = mysqli_num_rows($result);
                     
                 if ($row == 0) {
                         $sql = "insert into usuario (nome, email, foto, senha,  tipo) values ('$nome', '$email', '$insert', '$senha','$tipo')";
                         $query = mysqli_query($conectar, $sql); 
-                        //location('login.php');
+                        
                         if($query) {
                             echo "Registro inserido com sucesso";
                             header('location: home_adm.php');
                         }else {
-                            //echo "Erro ao inserir registro." . mysqli_error($conectar);
+                            echo "Erro ao inserir registro." . mysqli_error($conectar);
+                            
                         }
 
                 }else {
-                    $_SESSION['usuario_existe'] = true;
-                    echo "Desculpe esse usuario já existe";
+                    $_SESSION['usuario_existe'] = "Desculpe, mas esse endereço de email já existe!";
                     header('location:cadastro_moderador.php');
-                    exit;
                 }
             } else {
-               // $mensagem ="não foi possivel fazer o upload.";
+               $_SESSION['erro_upload'] = "Não foi possível fazer o upload!";
+               header('location:cadastro_moderador.php');   
             }
 
         }else{
-            //$mensagem = "Formato inválido";
+            $_SESSION['formato_invalido'] = "O formato da foto é inválido!";
+            header('location:cadastro_moderador.php');
         }
+       
+} else {
 
-        //echo $mensagem;
+        $sql = "select * from usuario where email = '$email'";
+        $result = mysqli_query($conectar, $sql);
+        $row = mysqli_num_rows($result);
+                    
+        if($row == 0) {
+
+        $sql = "insert into usuario (nome, email, senha, tipo) values ('$nome', '$email', '$senha','$tipo')";
+        $query = mysqli_query($conectar, $sql); 
+        header('location:home_adm.php');
+        }else{
+        $_SESSION['usuario_existe'] = "Desculpe, mas esse endereço de email já existe!";
+        header('location:cadastro_moderador.php');
     }
-
-
-
+      
+}
     mysqli_close($conectar);//fecha a conexao com o BD's + o parametro de qual é a conexao que deve ser fechada, no caso '$link'
     
 ?>

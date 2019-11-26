@@ -1,3 +1,12 @@
+    <?php
+        session_start();
+        include "conexao.php";
+        //Teste para não deixar ninguem não logado entrar
+        if(!$_SESSION['usuario']) {
+             $_SESSION['erros'] = "É necessário fazer login para acessar essa página!";
+             header('location:login.php');
+           } 
+    ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,23 +25,13 @@
     box-shadow: 10px 10px 10px 5px;
        }
     </style>
-
-    <?php
-        session_start();
-        include "conexao.php";
-        //Teste para não deixar ninguem não logado entrar
-        if(!$_SESSION['usuario']) {
-             $_SESSION['erros'] = "É necessário fazer login para acessar essa página!";
-             header('location:login.php');
-           } 
-    ?>
  
     </head>
     <body>
    <nav class="navbar navbar-expand-lg navbar-light bg-white">
           <a class='navbar-brand pl-2' href='home_adm.php'>
             <img src="logo.png" width="55" height="55" class="d-inline-block" alt="">
-            <span class="">Era Uma Vez No IFFar - Fw</span>
+            <span class="">Era Uma Vez No IFFar - FW </span>
           </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação" style="background-color: #C0C0C0;">
@@ -54,18 +53,33 @@
             <center>
             <i class="fas fa-user-circle fa-7x mrgin"></i>
             </center>
-            <?php 
-            if(isset($_SESSION['usuario_existe'])) {
-                echo "<center>";
-                echo "<span> <br>".$_SESSION['usuario_existe']."</span>";
-                echo "<center>";
 
-            }
+                    <?php 
+                    if(isset($_SESSION['formato_invalido'])) {
+                        echo "<div class='alert alert-info' role='alert'>";
+                        echo $_SESSION['formato_invalido'];
+                        echo "</div>"; 
+                        unset($_SESSION['formato_invalido']);
+                    }
+
+                    if(isset($_SESSION['usuario_existe'])) {
+                        echo "<div class='alert alert-info' role='alert'>";
+                        echo $_SESSION['usuario_existe'];
+                        echo "</div>"; 
+                        unset($_SESSION['usuario_existe']);
+                    }
+
+                    if(isset($_SESSION['erro_upload'])) {
+                        echo "<div class='alert alert-info' role='alert'>";
+                        echo $_SESSION['erro_upload'];
+                        echo "</div>"; 
+                        unset($_SESSION['erro_upload']);
+                    }
+
+                    ?>
             
-            ?>
-        </div>
-        <div class="col-auto">
-
+            </div>
+       
             <div class="col-auto">
             <label>Nome:</label>
             <input type="text"  name="nome" required class="form-control" />
@@ -83,7 +97,7 @@
 
             <div class="col-auto">
             <label>Foto</label>
-            <input type="file"  name="foto" class="form-control">
+            <input type="file" name="foto" class="form-control">
             </div>
 
             <center><br><button type="submit" class="btn btn-dark">Cadastrar</button></center>

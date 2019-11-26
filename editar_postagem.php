@@ -42,7 +42,7 @@
 	          	} 
 	        ?>
             <img src="logo.png" width="55" height="55" class="d-inline-block" alt="">
-            <span class="">Era Uma Vez No IFFar - Fw</span>
+            <span class="">Era Uma Vez No IFFar - FW </span>
           </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação" style="background-color: #C0C0C0;">
@@ -101,7 +101,7 @@
 			foreach ($query1 as $foto) {
 
 				$id_arquivo = $foto['id_arquivo'];
-				echo "<center> <br> <a href='excluir_arquivo.php?id=$id_arquivo' <i class='fas fa-trash'></i> EXCLUIR</a> <br> </center> ";
+				echo "<center> <br> <a href='excluir_arquivo.php?id_arquivo=$id_arquivo&id=$id_postagem' <i class='fas fa-trash'></i> EXCLUIR</a> <br> </center> ";
 				    if($foto['tipo_arquivo'] == "foto"){
 	      			  echo "<center> <img src='".$foto['endereco_arquivo']."' width='360' height='400'> <br> </center>";
 	    			} else if ($foto['tipo_arquivo'] == "audio"){

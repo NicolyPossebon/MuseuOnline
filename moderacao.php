@@ -13,7 +13,7 @@
  <nav class="navbar navbar-expand-lg navbar-light bg-white">
              <a class='navbar-brand pl-2' href='home_adm.php'>
             <img src="logo.png" width="55" height="55" class="d-inline-block" alt="">
-            <span class="">Era Uma Vez No IFFar - Fw</span>
+            <span class="">Era Uma Vez No IFFar - FW</span>
           </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação" style="background-color: #C0C0C0;">

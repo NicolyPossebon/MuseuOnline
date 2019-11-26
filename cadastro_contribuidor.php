@@ -23,6 +23,28 @@
     </head>
     <body>
 
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+
+        <a class="navbar-brand pl-2" href="home_usuario.php">
+            <img src="logo.png" width="55" height="55" class="d-inline-block" alt="">
+            <span class="">Era Uma Vez No IFFar - FW</span>
+          </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação" style="background-color: #C0C0C0;">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">
+         
+            <ul class="navbar-nav text-dark" style="font-size: 16.5px;">  
+
+      
+
+            </ul>
+       </div>
+   </nav>
+
+
         
 
             <div class="container d-flex justify-content-center" style="padding-top: 50px">
@@ -32,6 +54,30 @@
             <div class="col-auto">
             <center><h2>Cadastre-se</h2></center>
             </div>
+
+                    <?php 
+                    if(isset($_SESSION['formato_invalido'])) {
+                        echo "<div class='alert alert-info' role='alert'>";
+                        echo $_SESSION['formato_invalido'];
+                        echo "</div>"; 
+                        unset($_SESSION['formato_invalido']);
+                    }
+
+                    if(isset($_SESSION['usuario_existe'])) {
+                        echo "<div class='alert alert-info' role='alert'>";
+                        echo $_SESSION['usuario_existe'];
+                        echo "</div>"; 
+                        unset($_SESSION['usuario_existe']);
+                    }
+
+                    if(isset($_SESSION['erro_upload'])) {
+                        echo "<div class='alert alert-info' role='alert'>";
+                        echo $_SESSION['erro_upload'];
+                        echo "</div>"; 
+                        unset($_SESSION['erro_upload']);
+                    }
+
+                    ?>
 
             <div class="col-auto">
             <br><label>Nome:</label>

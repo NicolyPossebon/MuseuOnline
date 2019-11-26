@@ -35,7 +35,7 @@
 
 
             <img src="logo.png" width="55" height="55" class="d-inline-block" alt="">
-            <span class="">Era Uma Vez No IFFar - Fw</span>
+            <span class="">Era Uma Vez No IFFar - FW </span>
           </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação" style="background-color: #C0C0C0;">
@@ -51,13 +51,25 @@
 
 	<form method="post" action="salva_nova_publicacao.php" enctype="multipart/form-data">
 		    <div class="col-auto">
-            <center><h2>Faça a sua Publicação!</h2></center>
-            </div>
+            <center><h2>Faça a sua Publicação!</h2>
+   			</div>
+			</center>
+
+   			<?php 
+			if(isset($_SESSION['arquivo_invalido'])) {
+				echo "<div class='alert alert-danger' role='alert'>";
+				echo $_SESSION['arquivo_invalido'];
+				echo "</div>";	
+				unset($_SESSION['arquivo_invalido']);
+			}
+			?>
+				
 
 	<div class="col-auto">
 	<label>Título da Postagem</label> <br>
-	<input type="text" name="titulo" class="form-control"> <br>
+	<input type="text" required name="titulo" class="form-control"> <br>
 	</div>
+
 
 	<div class="col-auto">
 	<label>Descrição da Postagem</label> <br>
@@ -66,7 +78,7 @@
 
 	<div class="col-auto">
 	<label>Ano da Postagem</label> <br>
-	<select name="ano" class="form-control"> <br>
+	<select name="ano" required class="form-control"> <br>
  	  <?php for($i = 0; $i < 60; $i++){
  	  $ano = 1960 + $i;
  	  echo "<option value='$ano'>$ano</option>";

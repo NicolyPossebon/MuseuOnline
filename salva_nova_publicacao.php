@@ -9,13 +9,15 @@
     $dataatual = date("Y-m-d H-i-s");
     $status = 0;
 
-    //Incerção dos dados da
-   $insert = "INSERT INTO postagens (descricao_postagem, ano_postagem, status_moderacao, titulo,       data_atual, id_usuario) VALUES ('$descricao', '$ano', '$status', '$titulo', '$dataatual', '$id')";
-
-    $sql = mysqli_query($conectar, $insert);
+ 
 
 //Testa a global FILES para ver se há algo nela, usando o primeiro name arquivo ([0]) pois não pega de todos os que podem vir
 if(!empty($_FILES['foto']['tmp_name'][0])){
+
+        //Incerção dos dados da
+        $insert = "INSERT INTO postagens (descricao_postagem, ano_postagem, status_moderacao, titulo,    data_atual, id_usuario) VALUES ('$descricao', '$ano', '$status', '$titulo', '$dataatual', '$id')";
+
+        $sql = mysqli_query($conectar, $insert);
     
         //Exetenções de arquivos permitidas
         $extensoes_permitidas = array("png", "jpeg", "jpg", "mp3", "ogg");
@@ -32,6 +34,7 @@ if(!empty($_FILES['foto']['tmp_name'][0])){
 
         //Testa para ver se a extenção do arquivos escolhido pelo usuário está no array
         if(in_array($extensao, $extensoes_permitidas)){
+
 
             //Diretório onde as fotos serão armazenadas
             $pasta ="postagens/";
@@ -73,20 +76,38 @@ if(!empty($_FILES['foto']['tmp_name'][0])){
 
         }else{
             //Se não é das extenções permitidas
+            $_SESSION['arquivo_invalido'] = "O formato do arquivo é inválido!";
             echo "Formato inválido";
+            header('location:nova_publicacao.php');
+            exit;
         }
 
 $contador++;    
 }
+    //If para voltar para a página certa
+    if($_SESSION['tipo'] == 1){
+    header('locaion:home_contribuidor');
+    }else if ($_SESSION['tipo'] == 0){
+    header('location:home_adm.php');  
+    }else{
+    header('login.php');
 }
 
-//If para voltar para a página certa
- if($_SESSION['tipo'] == 1){
+} else{
+    //Incerção dos dados da postagem caso não haja fotos
+    $insert = "INSERT INTO postagens (descricao_postagem, ano_postagem, status_moderacao, titulo,       data_atual, id_usuario) VALUES ('$descricao', '$ano', '$status', '$titulo', '$dataatual', '$id')";
+
+    $sql = mysqli_query($conectar, $insert);
+    //If para voltar para a página certa
+    if($_SESSION['tipo'] == 1){
     header('locaion:home_contribuidor');
-} else if ($_SESSION['tipo'] == 0){
-header('location:home_adm.php');  
-  } else{
+    }else if ($_SESSION['tipo'] == 0){
+    header('location:home_adm.php');  
+    }else{
     header('login.php');
-  } 
+
+    
+  }
+}
 
 ?>
