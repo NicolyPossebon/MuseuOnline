@@ -60,7 +60,7 @@
 <!-- CSS FORM -->
 
 	<div class="container d-flex justify-content-center" style="padding-top: 30px">
-    <div class="form-row align-items-center fundo">
+    <div class="form align-items-center fundo col-9">
 
 		<form method="post" action="salva_edicao_postagem.php" enctype="multipart/form-data">
 	
@@ -103,7 +103,7 @@
 				$id_arquivo = $foto['id_arquivo'];
 				echo "<center> <br> <a href='excluir_arquivo.php?id_arquivo=$id_arquivo&id=$id_postagem' <i class='fas fa-trash'></i> EXCLUIR</a> <br> </center> ";
 				    if($foto['tipo_arquivo'] == "foto"){
-	      			  echo "<center> <img src='".$foto['endereco_arquivo']."' width='360' height='400'> <br> </center>";
+	      			  echo "<center> <img src='".$foto['endereco_arquivo']."' width:100%; height: auto> <br> </center>";
 	    			} else if ($foto['tipo_arquivo'] == "audio"){
 	     				 echo "<audio autoplay='autoplay' controls='controls'>
 	             			 		<source src='".$foto['endereco_arquivo']."'/>

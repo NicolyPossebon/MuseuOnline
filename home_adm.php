@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HOME ADMINISTRAÇÃO</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <link rel="stylesheet" type="text/css" href="css/estilo.css">
   <?php
   session_start();
   include "conexao.php";
    //Teste para não deixar ninguem não logado entrar
-  /* if(!$_SESSION['usuario']) {
+   if(!$_SESSION['usuario']) {
       $_SESSION['erros'] = "É necessário fazer login para acessar essa página!";
       header('location:login.php');
-    }*/ 
+    }
   ?>
  
 </head>
@@ -40,18 +40,25 @@
             <li class="nav-item pr-3">
               <a class="nav-link text-dark" href="nova_publicacao.php">Publicar</a>
             </li>
-            <li class="nav-item pr-3">
-              <a class="nav-link text-dark" href="contato.php">Fale Conosco</a>
-            </li>
-            <li class="nav-item pr-3">
-              <a class="nav-link text-dark" href="sobre_iffar_moderador.php">Sobre o IFFar</a>
-            </li>
-             <li class="nav-item pr-3">
+              <li class="nav-item pr-3">
               <a class="nav-link text-dark" href="moderacao.php">Moderar</a>
             </li>
+            <li class="nav-item pr-3 dropdown">
+              <a class="nav-link text-dark dropdown-toggle pr-2 mr-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              IFFar
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="sobre_iffar_moderador.php">Sobre o IFFar</a>
+                <a class="dropdown-item" href="contato.php">Fale Conosco</a>
+                </div>
+            </li>
+           
              <li class="nav-item pr-3">
               <a class="nav-link text-dark" href="perfil.php">Perfil</a>
             </li>
+                      <li class="nav-item pr-4 mr-2 active">
+             <a class="nav-link" href="logout.php">Sair</a>
+          </li>
           
          </ul>
   </div>

@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 // Import PHPMailer classes into the global namespace
 // These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -34,7 +34,7 @@ try {
     //Recipients
     $mail->setFrom($email, $nome);
     //$mail->addAddress('joe@example.net', 'Joe User');           // Add a recipient
-    $mail->addAddress('testeemailkamile@gmail.com');              // Name is optional
+    $mail->addAddress('nicolypossebon123@gmail.com');              // Name is optional
     $mail->addReplyTo($email, $nome);
     //$mail->addCC('cc@example.com');
     //$mail->addBCC('bcc@example.com');
@@ -50,7 +50,16 @@ try {
     $mail->AltBody = $mensagem;
 
     $mail->send();
-    echo 'Email enviado';
+    if(isset($_SESSION['tipo'])){
+        if($_SESSION['tipo'] == 1){
+        header('locaion:home_contribuidor');
+        }else if ($_SESSION['tipo'] == 0){
+        header('location:home_adm.php');  
+        }
+    }else{   
+    header('location:home_usuario.php');
+    }
+
 } catch (Exception $e) {
     echo "Email não enviado. Mailer Error: {$mail->ErrorInfo}";
 }

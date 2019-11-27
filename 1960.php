@@ -143,8 +143,10 @@ echo "</div>";
         $contacurtidas = mysqli_num_rows($sql1);
 
           if ($rows == 1){
+            
             echo $contacurtidas."<a href='curtir.php?id=$id&ano=$ano' <i class='fas fa-heart' ></i> </a>";
             //echo "<a href='curtir.php?id=$id&ano=$ano'>Descurtir </a> ";
+
           } else{
             echo $contacurtidas."<a href='curtir.php?id=$id&ano=$ano' <i class='far fa-heart'></i> </a>";
           }  

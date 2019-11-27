@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CONTATO </title>
+  <title>CONTATO </title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/estilo.css">
@@ -16,12 +16,12 @@
 
 
       <?php
-      		if(isset($_SESSION['tipo'])){
+      	if(isset($_SESSION['tipo'])){
       		 if($_SESSION['tipo'] == 1){
             	echo "<a class='navbar-brand pl-2' href='home_contribuidor.php'>";
             } else if ($_SESSION['tipo'] == 0){
             	echo "<a class='navbar-brand pl-2' href='home_adm.php'>"; 
-          	} }else {
+        }   }else {
           		echo "<a class='navbar-brand pl-2' href='home_usuario.php'>";
           	}
 
@@ -44,10 +44,14 @@
   </div>
 </nav>
 	
-	<div class="container d-flex justify-content-center" style="padding-top: 50px">
-    <div class="form-row align-items-center fundo">
+	<div class="container d-flex justify-content-center" style="padding-top: 80px">
+    <div class="form- align-items-center fundo col-6">
 
 	<form method="POST" action= "envia.php">
+
+	<div class="col-auto">
+    <center><h2>Fale Conosco</h2></center>
+    </div>
 
 	<div class="col-auto">
 	<label>NOME</label> <br>
@@ -69,7 +73,7 @@
 	<textarea name="msg" class="form-control" required></textarea>
 	<div class="col-auto">
 
-	<center><br><button type="submit" class="btn btn-dark">Enviar</button></center>
+	<center><br><button type="submit" class="btn btn-dark col-3">Enviar</button></center>
 
 	</form>
 </div>

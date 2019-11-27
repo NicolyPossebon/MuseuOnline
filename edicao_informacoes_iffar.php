@@ -42,14 +42,8 @@
        </nav>
 
 
-
-
-
-
-
-
-	<div class="container d-flex justify-content-center" style="padding-top: 50px">
-    <div class="form-row align-items-center fundo">
+   	<div class="container d-flex justify-content-center" style="padding-top: 60px">
+    <div class="form align-items-center fundo col-6">
 
 	<form method="POST" action="salva_edicoes_iffar.php">
 

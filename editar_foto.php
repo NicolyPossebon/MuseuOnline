@@ -67,12 +67,12 @@
 </nav>
 
 	<div class="container d-flex justify-content-center" style="padding-top: 30px">
-            <div class="form-row align-items-center fundo">
+            <div class="form align-items-center fundo col-auto">
 
             <form method="POST" action="salva_edicao_foto.php" enctype="multipart/form-data">
             <div class="col-auto">
             <center><h2>FOTO</h2></center>
-            <center><img src="<?php echo $user['foto'];?>"></center>
+            <center><img src="<?php echo $user['foto'];?>" style=" width:100%; height: auto" ></center>
             <br><input type="file" name="foto">
             <br><input type="hidden" name="imagem" class="form-control" value="<?php echo $user['foto']?>">
             </div>

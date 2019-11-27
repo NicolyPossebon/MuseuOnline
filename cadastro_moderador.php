@@ -13,18 +13,7 @@
         <meta charset="utf-8">
         <title>CADASTRO MODERADOR</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <style>
-   body{
-    background-color: #ADD8E6;
-   } 
-   .fundo{
-    background-color: white;
-    padding: 20px;
-    border:solid 0.5px;
-    box-shadow: 10px 10px 10px 5px;
-       }
-    </style>
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">
  
     </head>
     <body>

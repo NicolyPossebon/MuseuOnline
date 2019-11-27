@@ -52,8 +52,8 @@
 </nav>
 
 
-<div class="container d-flex justify-content-center" style="padding-top: 70px">
-<div class="form-row align-items-center fundo">
+<div class="container d-flex justify-content-center" style="padding-top: 100px">
+<div class="form align-items-center fundo col-6">
 
 	<form action="salva_edicao_senha.php" method="POST" style="margin:25px">
 		
