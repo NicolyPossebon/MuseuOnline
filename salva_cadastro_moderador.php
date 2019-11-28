@@ -1,11 +1,11 @@
 <?php
-	session_start();
-	include "conexao.php";
+    session_start();
+    include "conexao.php";
 
-	$nome = $_POST['nome'];
-	$email = $_POST['email'];
-	$senha = md5($_POST['senha']);
-	$tipo = '0';
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = md5($_POST['senha']);
+    $tipo = '0';
 
     //var_dump($_FILES['foto']);
 

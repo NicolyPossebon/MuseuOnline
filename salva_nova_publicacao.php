@@ -52,10 +52,10 @@ if(!empty($_FILES['foto']['tmp_name'][0])){
                 //echo "Upload feito com sucesso";
                 //Testa a extenção para depois incerir no banco
                     if ($extensao == "png" or $extensao == "jpeg" or $extensao == "jpg"){
-    					$tipo = "foto";
-    				} elseif ($extensao == "mp3" or $extensao =="ogg") {
-    					$tipo = "audio";
-   					 }
+                        $tipo = "foto";
+                    } elseif ($extensao == "mp3" or $extensao =="ogg") {
+                        $tipo = "audio";
+                     }
  
                 //Seleciona a última postagem, no caso a feita no início do arquivo, para que assim o arquivo seja incerido com o id da postagem certo.
                    $select = "SELECT * FROM postagens WHERE id_usuario = $id ORDER BY id_postagem DESC limit 1";
@@ -66,8 +66,8 @@ if(!empty($_FILES['foto']['tmp_name'][0])){
                    $idpostagem = $dados['id_postagem'];
 
                    //Incere os arquivos
-				    $insert2 = "INSERT INTO arquivos (endereco_arquivo, tipo_arquivo, id_postagem) VALUES ('$fotoinsert', '$tipo', $idpostagem)";
-				    $sql2 = mysqli_query($conectar, $insert2);
+                    $insert2 = "INSERT INTO arquivos (endereco_arquivo, tipo_arquivo, id_postagem) VALUES ('$fotoinsert', '$tipo', $idpostagem)";
+                    $sql2 = mysqli_query($conectar, $insert2);
         
             } else {
                 //Se não vai para a pasta
@@ -82,16 +82,16 @@ if(!empty($_FILES['foto']['tmp_name'][0])){
             exit;
         }
 
-$contador++;    
-}
+    $contador++;    
+    }
     //If para voltar para a página certa
     if($_SESSION['tipo'] == 1){
-    header('locaion:home_contribuidor');
+    header('location:home_contribuidor.php');
     }else if ($_SESSION['tipo'] == 0){
     header('location:home_adm.php');  
     }else{
-    header('login.php');
-}
+    header('location:login.php');
+    }
 
 } else{
     //Incerção dos dados da postagem caso não haja fotos
@@ -100,12 +100,12 @@ $contador++;
     $sql = mysqli_query($conectar, $insert);
     //If para voltar para a página certa
     if($_SESSION['tipo'] == 1){
-    header('locaion:home_contribuidor');
+    header('location:home_contribuidor.php');
     }else if ($_SESSION['tipo'] == 0){
     header('location:home_adm.php');  
     }else{
-    header('login.php');
-
+    header('location:login.php');
+    
     
   }
 }

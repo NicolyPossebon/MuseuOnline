@@ -26,8 +26,24 @@
 	<title>PERFIL</title>
 	<!-- Link Bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/estilo.css">
-
+	<link rel="stylesheet" href="estilo.css">
+  
+<style>
+a:link{
+  text-decoration: none;
+}
+a:visited{
+  text-decoration: none;
+}
+a:hover{
+  font-size: 19px;
+}
+.fundo{
+  border:solid 0.5px;
+  box-shadow: 10px 10px 10px 5px;
+}
+</style>
+ 
 </head>
 
 <body>
@@ -35,17 +51,21 @@
 	 <nav class="navbar navbar-expand-lg navbar-light bg-white">
 
 
-      <?php if($_SESSION['tipo'] == 1){
-             echo "<a class='navbar-brand pl-2' href='home_contribuidor.php'>";
-            } else if ($_SESSION['tipo'] == 0){
-              echo "<a class='navbar-brand pl-2' href='home_adm.php'>"; 
-          	} 
+        <?php
+
+           if($_SESSION['tipo'] == 1){
+              echo "<a class='navbar-brand pl-2' href='home_contribuidor.php'>
+            <img src='logo.png' width='55' height='55' class='d-inline-block'>
+            <span class=''>Era Uma Vez No IFFar - Fw</span>
+          </a>";
+            }else {
+             echo "<a class='navbar-brand pl-2' href='home_adm.php'>
+            <img src='logo.png' width='55' height='55' class='d-inline-block' alt=''>
+            <span class=''>Era Uma Vez No IFFar - Fw</span>
+          </a>";
+            }
+
             ?>
-
-
-            <img src="logo.png" width="55" height="55" class="d-inline-block" alt="">
-            <span class="">Era Uma Vez No IFFar - FW</span>
-          </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação" style="background-color: #C0C0C0;">
         <span class="navbar-toggler-icon"></span>
@@ -59,7 +79,7 @@
 
 			    <!-- DROPDOWN PARA EXCLUIR -->
 			    <li class="nav-item pr-3 dropdown">
-              		<a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              		<a class="nav-link text-dark dropdown-toggle pr-2 mr-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 	Editar
               		</a>
           				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -69,8 +89,12 @@
 		             	</div>
            		</li>
 
+               <li class="nav-item pr-3 active">
+              <a class="nav-link text-dark" href="nova_publicacao.php">Publicar</a>
+            </li>
+
            <!-- LOGOUT -->
-			    <li class="nav-item pr-3 active">
+			    <li class="nav-item pr-4 mr-2 active">
 			       <a class="nav-link" href="logout.php">Sair</a>
 			    </li>
 
@@ -109,9 +133,10 @@
   foreach ($result as $postagens) {
     $id = $postagens['id_postagem'];
 
-    echo "<div class='card' style='width: 50rem;'>";
+    echo "<div class='card fundo col-8 col-sm-10 col-lg-6 col-xl-8'>";
     //Título
-    echo "<div class='titulo'>".$postagens['titulo']."</div>";
+    echo "<div class='titulo' style='font-size:22px'>".$postagens['titulo']."</div>";
+    echo "<hr>";
 
     // Seleciona as linhas da tabela
     $selecionacurtidas = "SELECT * FROM curtidas WHERE id_postagem = $id";
@@ -120,7 +145,7 @@
     //Conta as curtidas
     $contacurtidas = mysqli_num_rows($sql1);
     if($contacurtidas > 1){
-      echo $contacurtidas." curtiram <br> <br>";
+      echo $contacurtidas." curtiram";
     }
 
     $sql1 = "SELECT * FROM arquivos WHERE id_postagem = $id";
@@ -146,8 +171,6 @@
                   echo "<audio preload='none' controls='controls'>
                           <source src='".$foto['endereco_arquivo']."'/>
                         </audio> <br>";
-
-                  echo "</div>";
               }
             }
 
@@ -167,20 +190,21 @@
         echo"<p class='card-text'>";
 
           //Ano
-          echo "<div class='titulo'>Ano: </div> ";
-          echo  "<div class='texto'>".$postagens['ano_postagem']."</div><br>";
+          echo "<div class='titulo' style='font-size:20px'>Ano: </div> ";
+          echo  "<div class='texto' style='font-size:18px'>".$postagens['ano_postagem']."</div><br>";
 
           //Descrição
-          echo "<div class='titulo'>Descrição: </div> ";
-          echo  "<div class='texto'>".$postagens['descricao_postagem']."</div><br>";
+          echo "<div class='titulo' style='font-size:20px'>Descrição: </div> ";
+          echo  "<div class='texto' style='font-size:18px'>".$postagens['descricao_postagem']."</div><br>";
 
           //Excluir        
-          echo "<a class='btn btn-outline-primary' href='excluir_postagem.php?id=$id' name='excluir'> EXCLUIR</a>";
+          echo "<a class='btn btn-outline-primary mr-1' href='excluir_postagem.php?id=$id' name='excluir'>EXCLUIR</a>";
 
           //Editar
-          echo "<a class='btn btn-outline-primary' href='editar_postagem.php?id=$id' name='editar'> EDITAR </a> <br>";
+          echo "<a class='btn btn-outline-primary ml-1' href='editar_postagem.php?id=$id' name='editar'>EDITAR</a> <br>";
 
         echo "<p>";
+      echo "</div>";
       echo "</div>";
   echo "</div>";
 echo "<br>";

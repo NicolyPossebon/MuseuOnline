@@ -1,0 +1,39 @@
+.margin{
+	margin-top: 80px;
+}
+
+.js .cd-h-timeline__filling-line{
+ 	background-color: blue !important;
+ }
+
+.js .cd-h-timeline__date--older-event::after{
+ 	border-color: blue !important;
+ }
+
+.js .cd-h-timeline__date--selected::after{
+	background-color: blue !important;
+	border-color: blue !important;
+}
+
+.js .cd-h-timeline__date:hover::after{
+	background-color: blue !important;
+	border-color: blue !important;
+}
+
+.js .cd-h-timeline__navigation:hover{
+	border-color: blue !important;
+}
+
+.js .cd-h-timeline__navigation::after{
+	border-color: blue !important;
+}
+
+a:link{
+	text-decoration: none;
+}
+
+a:visited{
+	text-decoration: none;
+}
+
+

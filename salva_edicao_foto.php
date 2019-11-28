@@ -7,7 +7,7 @@
 
 	if (isset($_FILES['foto'])){ //Comparação para ver se há alguma coisa na var global
 
-			$extensoes_permitidas = array("png", "jpeg", "jpg");
+			$extensoes_permitidas = array("png", "jpeg", "jpg", "JPG");
 	        $extensao = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
 
 	 		if(in_array($extensao, $extensoes_permitidas)){ //Se a extensão que o usuario escolheu etiver no array:
