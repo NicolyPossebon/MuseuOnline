@@ -29,7 +29,7 @@ a:hover{
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: lightblue;">
 
-        <a class="navbar-brand pl-2" href="home_adm.php">
+        <a class="navbar-brand pl-2" href="home_usuario.php">
             <img src="logo.png" width="55" height="55" class="d-inline-block" alt="">
             <span class="">Era Uma Vez No IFFar - Fw</span>
           </a>

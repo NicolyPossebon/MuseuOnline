@@ -59,9 +59,7 @@ include "conexao.php";
          
           <ul class="navbar-nav text-dark" style="font-size: 16.5px;">
 
-            <li class="nav-item pr-3">
-              <a class="nav-link text-dark" href="perfil.php">Perfil</a>
-            </li>
+           </ul>
       </div>
     </div>
   </div>

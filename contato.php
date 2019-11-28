@@ -1,18 +1,18 @@
-	<?php
-		session_start();
-		include "conexao.php";
-	?>
+  <?php
+    session_start();
+    include "conexao.php";
+  ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CONTATO </title>
+  <title>CONTATO </title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-	 <nav class="navbar navbar-expand-lg navbar-light bg-white">
+   <nav class="navbar navbar-expand-lg navbar-light bg-white">
 
 
      <?php
@@ -48,39 +48,39 @@
     </div>
   </div>
 </nav>
-	
-	<div class="container d-flex justify-content-center" style="padding-top: 80px">
+  
+  <div class="container d-flex justify-content-center" style="padding-top: 80px">
     <div class="form align-items-center fundo col-6">
 
-	<form method="POST" action= "envia.php">
+  <form method="POST" action= "envia.php">
 
-	<div class="col-auto">
+  <div class="col-auto">
     <center><h2>Fale conosco</h2></center>
     </div>
 
-	<div class="col-auto">
-	<label>NOME</label> <br>
-	<input type="text" name="nome" class="form-control" required> <br>
-	</div>
+  <div class="col-auto">
+  <label>NOME</label> <br>
+  <input type="text" name="nome" class="form-control" required> <br>
+  </div>
 
-	<div class="col-auto">
-	<label>EMAIL</label> <br>
-	<input type="text" name="email" class="form-control" required> <br>
-	</div>
+  <div class="col-auto">
+  <label>EMAIL</label> <br>
+  <input type="text" name="email" class="form-control" required> <br>
+  </div>
 
-	<div class="col-auto">
-	<label>ASSUNTO</label> <br>
-	<input type="text" name="assunto" class="form-control" required> <br>
-	</div>
+  <div class="col-auto">
+  <label>ASSUNTO</label> <br>
+  <input type="text" name="assunto" class="form-control" required> <br>
+  </div>
 
-	<div class="col-auto">
-	<label>MENSAGEM</label> <br>
-	<textarea name="msg" class="form-control" required></textarea>
-	<div class="col-auto">
+  <div class="col-auto">
+  <label>MENSAGEM</label> <br>
+  <textarea name="msg" class="form-control" required></textarea>
+  <div class="col-auto">
 
-	<center><br><button type="submit" class="btn btn-dark">Enviar</button></center>
+  <center><br><button type="submit" class="btn btn-dark">Enviar</button></center>
 
-	</form>
+  </form>
 </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

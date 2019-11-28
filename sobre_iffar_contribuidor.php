@@ -21,21 +21,25 @@
 
    <nav class="navbar navbar-expand-lg navbar-light bg-white">
 
-
-      <?php
+<?php
            if(isset($_SESSION['tipo'])){
            if($_SESSION['tipo'] == 1){
               echo "<a class='navbar-brand pl-2' href='home_contribuidor.php'>
             <img src='logo.png' width='55' height='55' class='d-inline-block'>
             <span class=''>Era Uma Vez No IFFar - Fw</span>
           </a>";
+            } else if ($_SESSION['tipo'] == 0) {
+             echo "<a class='navbar-brand pl-2' href='home_adm.php'>
+            <img src='logo.png' width='55' height='55' class='d-inline-block' alt=''>
+            <span class=''>Era Uma Vez No IFFar - Fw</span>
+          </a>";
+            }
             }else{
               echo "<a class='navbar-brand pl-2' href='home_usuario.php'>
             <img src='logo.png' width='55' height='55' class='d-inline-block' alt=''>
             <span class=''>Era Uma Vez No IFFar - Fw</span>
           </a>";
             }
-          }
   ?>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação" style="background-color: #C0C0C0;">
@@ -45,9 +49,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">
          
           <ul class="navbar-nav text-dark" style="font-size: 16.5px;">
-             <li class="nav-item pr-3">
-              <a class="nav-link text-dark" href="perfil.php">Perfil</a>
-            </li>
+           
           </ul>
       </div>
   
@@ -65,25 +67,25 @@
       <div class="carousel-inner">
         <!-- Aqui cria-se uma imagem (item) do carousel através da classe carousel-item a classe active define qual será a imagem ativa ao abrir o site pela primeira vez -->
         <div class="carousel-item active">
-          <img src="https://picsum.photos/id/10/2500/1667" class="d-block w-100" alt="...">
+           <img src="parada.jpeg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h5>Pórtico</h5>
+          <p>Entrada do IFFar</p>
         </div>
         </div>
         <div class="carousel-item">
-          <img src="https://picsum.photos/id/10/2500/1667" class="d-block w-100" alt="...">
+         <img src="pinos.jpeg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h5>Pinos</h5>
+          <p>Lazer entre a natureza</p>
         </div>
         </div>
 
         <div class="carousel-item">
-          <img src="https://picsum.photos/id/10/2500/1667" class="d-block w-100" alt="...">
+          <img src="arvre.jpeg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h5>Árvore na primaveira</h5>
+          <p>A beleza do campus</p>
         </div>
         </div>
 
@@ -102,7 +104,7 @@
 
 
   <div class="container d-flex justify-content-center" style="margin-bottom: 25px; margin-top: 35px">
-  <div class="form align-items-center fundo col-12">
+  <div class="form-row align-items-center fundo col-8 col-sm-8 col-md-6 col-lg-8 col-xl-10">
 
    <form method="POST" action="envia.php" enctype="multipart/form-data">
 

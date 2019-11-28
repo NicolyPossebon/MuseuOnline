@@ -37,14 +37,14 @@ if(isset($_FILES['foto'])){
              if(move_uploaded_file($temporario, $pasta.$foto)){
                 echo "Upload feito com sucesso";
                     if ($extensao == "png" or $extensao == "jpeg" or $extensao == "jpg"){
-    					$tipo = "foto";
-    				} elseif ($extensao == "mp3" or $extensao =="ogg") {
-    					$tipo = "audio";
-   					 }
+                        $tipo = "foto";
+                    } elseif ($extensao == "mp3" or $extensao =="ogg") {
+                        $tipo = "audio";
+                     }
  
 
-				    $insert2 = "INSERT INTO arquivos (endereco_arquivo, tipo_arquivo, id_postagem) VALUES ('$fotoinsert', '$tipo', $id_postagem)";
-				    $sql2 = mysqli_query($conectar, $insert2);
+                    $insert2 = "INSERT INTO arquivos (endereco_arquivo, tipo_arquivo, id_postagem) VALUES ('$fotoinsert', '$tipo', $id_postagem)";
+                    $sql2 = mysqli_query($conectar, $insert2);
 
             } else {
                 echo "não foi possivel fazer o upload.";

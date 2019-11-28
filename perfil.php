@@ -1,32 +1,32 @@
 <?php
-	session_start();
-	include "conexao.php";
-		//Teste para não deixar ninguem não logado entrar
-    	if(!$_SESSION['usuario']) {
-	      $_SESSION['erros'] = "É necessário fazer login para acessar essa página!";
-	      header('location:login.php');
-	    } 
-	
+  session_start();
+  include "conexao.php";
+    //Teste para não deixar ninguem não logado entrar
+      if(!$_SESSION['usuario']) {
+        $_SESSION['erros'] = "É necessário fazer login para acessar essa página!";
+        header('location:login.php');
+      } 
+  
 
 
-	//parte que busca as informações dos usuários
-	$id_usuario = $_SESSION['usuario'];
-	$sql = "SELECT * FROM usuario WHERE ID_usuario = $id_usuario";
-	$result = mysqli_query($conectar, $sql);
-	$user = mysqli_fetch_assoc($result);
+  //parte que busca as informações dos usuários
+  $id_usuario = $_SESSION['usuario'];
+  $sql = "SELECT * FROM usuario WHERE ID_usuario = $id_usuario";
+  $result = mysqli_query($conectar, $sql);
+  $user = mysqli_fetch_assoc($result);
 
  
 ?>
 
 <html>
 <head>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>PERFIL</title>
-	<!-- Link Bootstrap -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="estilo.css">
+  <title>PERFIL</title>
+  <!-- Link Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="estilo.css">
   
 <style>
 a:link{
@@ -48,7 +48,7 @@ a:hover{
 
 <body>
 <!-- CSS NAV -->
-	 <nav class="navbar navbar-expand-lg navbar-light bg-white">
+   <nav class="navbar navbar-expand-lg navbar-light bg-white">
 
 
         <?php
@@ -72,42 +72,42 @@ a:hover{
         </button>
   
 
- 		 <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">
+     <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">
          
-          <ul class="navbar-nav text-dark" style="font-size: 16.5px;">		
+          <ul class="navbar-nav text-dark" style="font-size: 16.5px;">    
 
 
-			    <!-- DROPDOWN PARA EXCLUIR -->
-			    <li class="nav-item pr-3 dropdown">
-              		<a class="nav-link text-dark dropdown-toggle pr-2 mr-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                	Editar
-              		</a>
-          				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-			                <a class="dropdown-item" href="editar_nome.php">Nome e Email</a>
-			                <a class="dropdown-item" href="editar_senha.php">Senha</a>
-			                <a class="dropdown-item" href="editar_foto.php">Foto</a>
-		             	</div>
-           		</li>
+          <!-- DROPDOWN PARA EXCLUIR -->
+          <li class="nav-item pr-3 dropdown">
+                  <a class="nav-link text-dark dropdown-toggle pr-2 mr-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Editar
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="editar_nome.php">Nome e Email</a>
+                      <a class="dropdown-item" href="editar_senha.php">Senha</a>
+                      <a class="dropdown-item" href="editar_foto.php">Foto</a>
+                  </div>
+              </li>
 
                <li class="nav-item pr-3 active">
               <a class="nav-link text-dark" href="nova_publicacao.php">Publicar</a>
             </li>
 
            <!-- LOGOUT -->
-			    <li class="nav-item pr-4 mr-2 active">
-			       <a class="nav-link" href="logout.php">Sair</a>
-			    </li>
+          <li class="nav-item pr-4 mr-2 active">
+             <a class="nav-link" href="logout.php">Sair</a>
+          </li>
 
         
-	
+  
 
-		 </ul>
-	</div>
+     </ul>
+  </div>
 </nav>
 
-		<div class="divperfil">
+    <div class="divperfil">
 
-		<!--imagem -->
+    <!--imagem -->
     <?php 
     if(empty($user['foto'])){
       echo "<img class='fotoperfil' width='100' src='fotouser.jpeg'>";
@@ -116,13 +116,13 @@ a:hover{
     } 
      ?>
      
-		<!--Nome Usuário -->
-		<h3 class="usernameperfil"> <?php echo $user['nome'];?> </h3>
-		<!--Email -->
-		<h3 class="usernameperfil"> <?php echo $user['email'];?> </h3>
+    <!--Nome Usuário -->
+    <h3 class="usernameperfil"> <?php echo $user['nome'];?> </h3>
+    <!--Email -->
+    <h3 class="usernameperfil"> <?php echo $user['email'];?> </h3>
 
 
-		</div>
+    </div>
 <center>
   <p> </p>
     <?php
@@ -213,9 +213,9 @@ echo "<br>";
 ?>
 
 <!-- JavaScript jQuery 3.3.1, Popper.js 1.14.7, Bootstrap 4 -->
-	 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
 

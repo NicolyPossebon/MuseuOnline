@@ -46,7 +46,7 @@
 
   <!--CSS DO FORM -->
 
-   	<div class="container d-flex justify-content-center" style="padding-top: 60px">
+   	<div class="container d-flex justify-content-center" style="padding-top: 20px">
     <div class="form align-items-center fundo col-10 col-sm-8 col-md-8 col-lg-6 col-xl-6">
 
 <form method="post" action="salva_nova_publicacao.php" enctype="multipart/form-data">

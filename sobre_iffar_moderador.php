@@ -34,16 +34,16 @@
          
           <ul class="navbar-nav text-dark" style="font-size: 16.5px;">
 
- 				<li class="nav-item pr-3 active">
-			       <a class="nav-link" href="edicao_informacoes_iffar.php">Editar</a>
-			    </li>
+        <li class="nav-item pr-3 active">
+             <a class="nav-link" href="edicao_informacoes_iffar.php">Editar</a>
+          </li>
          
          </ul>
       </div>
     </div>
   </div>
 </nav>
-	<div class="container data-slide col-md-6 col-lg-6 col-xg-6"  style="margin-top: 25px;">
+  <div class="container data-slide col-md-6 col-lg-6 col-xg-6"  style="margin-top: 25px;">
     <!-- Utiliza a classe carousel slide para que o bootstrap saiba que ali será um componente de imagem e a classe slide é utilizada para que ele passe as imagens automaticamente
     Outro ponto importante é o nome da div id="carousel" ele será utilizado para ligar os botões de avançar e voltar co componente carrousel -->
     <div id="carousel" class="carousel slide" data-ride="carousel" >
@@ -55,25 +55,25 @@
       <div class="carousel-inner">
         <!-- Aqui cria-se uma imagem (item) do carousel através da classe carousel-item a classe active define qual será a imagem ativa ao abrir o site pela primeira vez -->
         <div class="carousel-item active">
-          <img src="https://picsum.photos/id/10/2500/1667" class="d-block w-100" alt="...">
+          <img src="arvre.jpeg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h5>Árvore na primaveira</h5>
+          <p>A beleza do campus</p>
         </div>
         </div>
         <div class="carousel-item">
-          <img src="https://picsum.photos/id/10/2500/1667" class="d-block w-100" alt="...">
+          <img src="parada.jpeg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h5>Pórtico</h5>
+          <p>Entrada do IFFar</p>
         </div>
         </div>
 
         <div class="carousel-item">
-          <img src="https://picsum.photos/id/10/2500/1667" class="d-block w-100" alt="...">
+          <img src="pinos.jpeg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h5>Pinos</h5>
+          <p>Lazer entre a natureza</p>
         </div>
         </div>
 
@@ -110,7 +110,7 @@
     echo '<hr>';
     echo '<b>'."Onde fica o IFFAR - FW: ".'</b>'. '<p>'.$informacoes['local_iffar'].'</p>';
     echo '<hr>';
-    echo '<b>'."Onde fica o IFFAR - FW: ".'</b>'. '<p>'. $informacoes['contato'].'</p>';
+    echo '<b>'."Contato do IFFAR - FW: ".'</b>'. '<p>'. $informacoes['contato'].'</p>';
 
   ?>
                  
