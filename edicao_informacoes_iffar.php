@@ -2,9 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>SOBRE O IFFar - FW</title>
+	<title>EDIÇÃO SOBRE O IFFAR - FW</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- 	<link rel="stylesheet" href="css/estilo.css">
+ 	<link rel="stylesheet" href="estilo.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -18,7 +18,7 @@
       header('location:login.php');
     } 
 		
-		$sql = "select * from iffar where id_iffar = 1";
+		$sql = "select * from iffar where id_iffar = 0";
 		$result = mysqli_query($conectar, $sql);
 		$iffar = mysqli_fetch_assoc($result);
 		mysqli_close($conectar);
@@ -41,40 +41,40 @@
         </button>
        </nav>
 
+<div class="container d-flex justify-content-center" style="padding-top: 40px; margin-bottom: 20px">
+            <div class="col-7 align-items-center fundo"> <!-- O col-7 faz aumentar o tamanho da caixa-->
 
-   	<div class="container d-flex justify-content-center" style="padding-top: 60px">
-    <div class="form align-items-center fundo col-6">
+                        <form method="POST" action="salva_edicoes_iffar.php" enctype="multipart/form-data" style="margin:20px">
+                        <div class="col-auto">
+                       <center><h2>Edição de informações</h2></center>
+                        </div>
 
-	<form method="POST" action="salva_edicoes_iffar.php">
+                       <div class="col-auto">
+                            <br><label class="control-label">O que é o IFFAR-FW?</label>  
+                              <br><textarea  name="oque" class="form-control" rows="2" value ="<?php echo $iffar['oque']?>" required></textarea>                          
+                        
+                        </div>
+                        <div class="col-auto">
+                            <br><label>Sobre o IFFar-FW:</label>
+                            <br><textarea name="sobre" class="form-control" rows="2" value ="<?php echo $iffar['sobre']?>" required></textarea>                      
+                        </div>
 
-	<div class="col-auto">
-	<label>O que é o IFFar - FW?</label> <br>
-	<input type="text" name="oque" class="form-control" value ="<?php echo $iffar['oque']?>"> <br>
-	</div>
+                       <div class="col-auto">
+                            <br><label class="control-label">Onde fica o IFFar-FW?</label> 
+                            <br><textarea name="onde" class="form-control" rows="2" value ="<?php echo $iffar['local_iffar']?>" required></textarea>
+                           
+                        
+                        </div>
 
-	<div class="col-auto">
-	<label>Sobre o IFFar - FW</label> <br>
-	<input type="text" name="sobre" class="form-control" value ="<?php echo $iffar['sobre']?>"> <br>
-	</div>
 
-	<div class="col-auto">
-	<label>Onde fica o IFFar - FW?</label> <br>
-	<input type="text" name="onde" class="form-control" value ="<?php echo $iffar['local_iffar']?>"> <br>
-	</div>
+                       <div class="col-auto">
+                            <br><label class="control-label">Contato do IFFar-FW:</label>                           
+                            <br><textarea name="contato" class="form-control" rows="2" value ="<?php echo $iffar['contato']?>" required></textarea>
+                        </div>
 
-	<div class="col-auto">
-	<label>Contato do IFFar- FW</label> <br>
-	<input type="text" name="contato" class="form-control" value ="<?php echo $iffar['contato']?>"> <br>
-	</div>
+                        <center><br><button type="submit" class="btn btn-dark">Enviar</button></center>
+						</form>
 
-		<div class="col-auto">
-
-             <center><br><button type="submit" class="btn btn-dark">Cadastrar</button></center>
-    </div>
-	</center>
-	</form>
-</div>
-</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

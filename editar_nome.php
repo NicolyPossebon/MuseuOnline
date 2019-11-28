@@ -27,20 +27,35 @@
 </head>
 <body>
 
-
+<style>
+   body{
+    background-color: #ADD8E6;
+   } 
+   .fundo{
+    background-color: white;
+    padding: 20px;
+    border:solid 0.5px;
+    box-shadow: 10px 10px 10px 5px;
+       }
+</style>
 
  <nav class="navbar navbar-expand-lg navbar-light bg-white">
 
         <?php
-        if($_SESSION['tipo']  == 1){
-          echo "<a class='navbar-brand pl-2' href='home_contribuidor.php'>";
-        } else {
-          echo "<a class='navbar-brand pl-2' href='home_adm.php'>";
-        }
-        ?>
-            <img src="logo.png" width="55" height="55" class="d-inline-block" alt="">
-            <span class="">Era Uma Vez No IFFar - Fw</span>
-          </a>
+
+           if($_SESSION['tipo'] == 1){
+              echo "<a class='navbar-brand pl-2' href='home_contribuidor.php'>
+            <img src='logo.png' width='55' height='55' class='d-inline-block'>
+            <span class=''>Era Uma Vez No IFFar - Fw</span>
+          </a>";
+            }else {
+             echo "<a class='navbar-brand pl-2' href='home_adm.php'>
+            <img src='logo.png' width='55' height='55' class='d-inline-block' alt=''>
+            <span class=''>Era Uma Vez No IFFar - Fw</span>
+          </a>";
+            }
+
+            ?>
 
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação" style="background-color: #C0C0C0;">
           <span class="navbar-toggler-icon"></span>
@@ -67,12 +82,12 @@
                         </div>
 
                        <div class="col-auto">
-                            <br><label class="control-label">Editar nome</label>                          
+                            <br><label class="control-label">Editar nome:</label>                          
                             <br><input type="text" name="nome" class="form-control" value="<?php echo $user['nome'];?>" required>
                         
                         </div>
                         <div class="col-auto">
-                            <br><label>Editar perfil</label>
+                            <br><label>Editar e-mail:</label>
                             
                             <br><input type="email" name="email" class="form-control" value="<?php echo $user['email'];?>" required>
                        
@@ -81,6 +96,7 @@
                         <center><br><button type="submit" class="btn btn-dark">Enviar</button></center>
 						</form>
 
+	<?php mysqli_close($conectar); ?>
 
 	  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

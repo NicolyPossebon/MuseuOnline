@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CADASTRO MODERADOR</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+   body{
+    background-color: #ADD8E6;
+   } 
+   .fundo{
+    background-color: white;
+    padding: 20px;
+    border:solid 0.5px;
+    box-shadow: 10px 10px 10px 5px;
+       }
+    </style>
+
     <?php
         session_start();
         include "conexao.php";
@@ -7,20 +26,13 @@
              header('location:login.php');
            } 
     ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>CADASTRO MODERADOR</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/estilo.css">
  
     </head>
     <body>
    <nav class="navbar navbar-expand-lg navbar-light bg-white">
           <a class='navbar-brand pl-2' href='home_adm.php'>
             <img src="logo.png" width="55" height="55" class="d-inline-block" alt="">
-            <span class="">Era Uma Vez No IFFar - FW </span>
+            <span class="">Era Uma Vez No IFFar - Fw</span>
           </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação" style="background-color: #C0C0C0;">
@@ -43,7 +55,7 @@
             <i class="fas fa-user-circle fa-7x mrgin"></i>
             </center>
 
-                    <?php 
+             <?php 
                     if(isset($_SESSION['formato_invalido'])) {
                         echo "<div class='alert alert-info' role='alert'>";
                         echo $_SESSION['formato_invalido'];
@@ -67,8 +79,9 @@
 
                     ?>
             
-            </div>
-       
+        </div>
+        <div class="col-auto">
+
             <div class="col-auto">
             <label>Nome:</label>
             <input type="text"  name="nome" required class="form-control" />
@@ -86,7 +99,7 @@
 
             <div class="col-auto">
             <label>Foto</label>
-            <input type="file" name="foto" class="form-control">
+            <input type="file"  name="foto" class="form-control">
             </div>
 
             <center><br><button type="submit" class="btn btn-dark">Cadastrar</button></center>
