@@ -1,11 +1,11 @@
 <?php
-	session_start();
-	include "conexao.php";
+    session_start();
+    include "conexao.php";
 
-	$nome = $_POST['nome'];
-	$email = $_POST['email'];
-	$senha = md5($_POST['senha']);
-	$tipo = '1';
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = md5($_POST['senha']);
+    $tipo = '1';
     
     if(isset($_FILES['foto']['name'][0])){
 

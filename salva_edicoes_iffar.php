@@ -6,7 +6,7 @@
 	$contato = $_POST['contato'];
 
 
-   $update = "UPDATE iffar SET local_iffar = '$onde', oque = '$oque', contato = '$contato', sobre = '$sobre' WHERE id_iffar = 1";
+   $update = "UPDATE iffar SET local_iffar = '$onde', oque = '$oque', contato = '$contato', sobre = '$sobre' WHERE id_iffar = 0";
 	$query = mysqli_query($conectar, $update);
 
 	if($query){

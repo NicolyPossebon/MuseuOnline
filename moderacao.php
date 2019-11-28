@@ -5,20 +5,29 @@
 	<title>MODERAÇÃO DE POSTAGENS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="estilo.css">
   <link rel="stylesheet" type="text/css" href="icons/css/all.css">
-
+<style>
+	.fundo{
+  border:solid 0.5px;
+  box-shadow: 10px 10px 10px 5px;
+}
+</style>
 </head>
 <body>
  <nav class="navbar navbar-expand-lg navbar-light bg-white">
              <a class='navbar-brand pl-2' href='home_adm.php'>
             <img src="logo.png" width="55" height="55" class="d-inline-block" alt="">
-            <span class="">Era Uma Vez No IFFar - FW</span>
+            <span class="">Era Uma Vez No IFFar - Fw</span>
           </a>
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação" style="background-color: #C0C0C0;">
         <span class="navbar-toggler-icon"></span>
         </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">
+		<ul class="navbar-nav text-dark" style="font-size: 16.5px;">
+			 <li class="nav-item pr-3">
+              <a class="nav-link text-dark" href="perfil.php">Perfil</a>
+            </li>
        </nav>
 
 <center>
@@ -38,14 +47,14 @@
 		$query = mysqli_query($conectar, $sql);
 
 
-		foreach ($query as $postagens) {
+		foreach ($query as $postagens) { 
 
 		echo "<p>";
 
 		$id = $postagens['id_postagem'];
-		echo "<div class='card' style='width: 50rem;'>";
+		echo "<div class='card col-8 col-sm-10 col-lg-10 col-xl-8 fundo'>";
 
-		echo "<div class='titulo'>".$postagens['titulo']."</div>";
+		echo "<div class='titulo' style='font-size:22px'>".$postagens['titulo']."</div>";
 		echo "<hr>";
 		
 		//echo $postagens['id_postagem'];
@@ -71,12 +80,12 @@
               }
               
               if($foto['tipo_arquivo'] == "foto"){
-                  echo "<img src='".$foto['endereco_arquivo']."' class='d-block w-100' width='360' height='400' alt='...''>
+                  echo "<img src='".$foto['endereco_arquivo']."' class='d-block col-8 col-sm-10 col-lg-6 col-xl-8' width='50%' height='auto' alt='...''>
                  </div>";
               }else if ($foto['tipo_arquivo'] == "audio"){
                   echo "<audio preload='none' controls='controls'>
                           <source src='".$foto['endereco_arquivo']."'/>
-                        </audio> <br>";
+                        </audio>";
                    echo "</div>";
               }
             }
@@ -98,12 +107,12 @@
 		echo "<p class='card-text'>";
 
 		//Ano
-	    echo "<div class='titulo'>Ano: </div> ";
-   		echo  "<div class='texto'>".$postagens['ano_postagem']."</div><br>";
+	    echo "<div class='titulo' style='font-size:20px'>Ano: </div> ";
+   		echo  "<div class='texto' style='font-size:18px'>".$postagens['ano_postagem']."</div><br>";
 
 		//Descrição
-		echo "<div class='titulo'>Descrição: </div> ";
-    	echo  "<div class='texto'>".$postagens['descricao_postagem']."</div><br>";
+		echo "<div class='titulo' style='font-size:20px'>Descrição: </div> ";
+    	echo  "<div class='texto' style='font-size:18px'>".$postagens['descricao_postagem']."</div><br>";
 
  		echo "</p>";
 
@@ -112,9 +121,9 @@
 			<!--ID da postagem -->
 			<input type='hidden' name='id' value='$id'>
 			<!-- Botão de Aceitar -->
-			<input type='submit' class='btn btn-outline-info' name='sim' value='Confirmar'>
+			<input type='submit' class='btn btn-outline-info mr-1' name='sim' value='Confirmar'>
 			<!-- Botão de Excluir -->
-			<input type='submit' class='btn btn-outline-info' name='nao' value='Excluir'>
+			<input type='submit' class='btn btn-outline-info ml-1' name='nao' value='Excluir'>
 		</form>";
 
 	echo "</div>";

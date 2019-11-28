@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>EDITAR PERFIL</title>
 	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	 <link rel="stylesheet" type="text/css" href="css/estilo.css">
+	 <link rel="stylesheet" type="text/css" href="estilo.css">
 
 	<?php
 	session_start();
@@ -55,16 +55,18 @@
 <div class="container d-flex justify-content-center" style="padding-top: 100px">
 <div class="form align-items-center fundo col-6">
 
-	<form action="salva_edicao_senha.php" method="POST" style="margin:25px">
-		
-		<div class="col-auto">
-		<br><label class="control-label">Editar Senha</label>  
-		<input type="password" class="form-control" name="senha">
-		</div>
+	<form action="salva_edicao_senha.php" method="POST" style="margin:40px">
+      <div class="col-auto">
+        <center><h2>Editar</h2></center>
+       </div>
 
-		 <center><br><button type="submit" class="btn btn-dark">Enviar</button></center>
-	</form>
+       <div class="col-auto">
+         <br><label class="control-label">Editar senha:</label>                          
+         <br><input type="password" name="senha" class="form-control" required>
+        </div>
 
+      <center><br><button type="submit" class="btn btn-dark">Enviar</button></center>
+   </form>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

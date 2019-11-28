@@ -1,20 +1,32 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HOME CONTRIBUIDOR</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   <link rel="stylesheet" href="css/estilo.css">
+   <link rel="stylesheet" href="estilo.css">
 <?php
   session_start();
   include "conexao.php";
   //Teste para não deixar ninguem não logado entrar
   if(!$_SESSION['usuario']) {
-      $_SESSION['erros'] = "É necessário fazer login para acessar essa página!";
-      header('location:login.php');
-  } 
+    $_SESSION['erros'] = "É necessário fazer login para acessar essa página!";
+    header('location:login.php');
+ } 
 ?>
+
+<style>
+a:link{
+  text-decoration: none;
+}
+a:visited{
+  text-decoration: none;
+}
+a:hover{
+  font-size: 19px;
+}
+</style>
  
 </head>
 <body>
@@ -46,7 +58,9 @@
             <li class="nav-item pr-3">
               <a class="nav-link text-dark" href="sobre_iffar_contribuidor.php">Sobre o IFFar</a>
             </li>
-          
+          <li class="nav-item pr-4 mr-2 active">
+             <a class="nav-link" href="logout.php">Sair</a>
+          </li>
          </ul>  
   </div>
 </nav>

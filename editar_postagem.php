@@ -24,7 +24,7 @@
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="estilo.css">
 	<link rel="stylesheet" type="text/css" href="icons/css/all.css">
 
 
@@ -35,16 +35,21 @@
 
 <!-- CSS NAV -->
 	 <nav class="navbar navbar-expand-lg navbar-light bg-white">
-	      	<?php if($_SESSION['tipo'] == 1){
-	             echo "<a class='navbar-brand pl-2' href='home_contribuidor.php'>";
-	            } else if ($_SESSION['tipo'] == 0){
-	              echo "<a class='navbar-brand pl-2' href='home_adm.php'>"; 
-	          	} 
-	        ?>
-            <img src="logo.png" width="55" height="55" class="d-inline-block" alt="">
-            <span class="">Era Uma Vez No IFFar - FW </span>
-          </a>
+	      	<?php
+           if($_SESSION['tipo'] == 1){
+              echo "<a class='navbar-brand pl-2' href='home_contribuidor.php'>
+            <img src='logo.png' width='55' height='55' class='d-inline-block'>
+            <span class=''>Era Uma Vez No IFFar - Fw</span>
+          </a>";
+            }else{
+              echo "<a class='navbar-brand pl-2' href='home_adm.php'>
+            <img src='logo.png' width='55' height='55' class='d-inline-block' alt=''>
+            <span class=''>Era Uma Vez No IFFar - Fw</span>
+          </a>";
+            }
 
+  ?>
+         
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação" style="background-color: #C0C0C0;">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -103,7 +108,7 @@
 				$id_arquivo = $foto['id_arquivo'];
 				echo "<center> <br> <a href='excluir_arquivo.php?id_arquivo=$id_arquivo&id=$id_postagem' <i class='fas fa-trash'></i> EXCLUIR</a> <br> </center> ";
 				    if($foto['tipo_arquivo'] == "foto"){
-	      			  echo "<center> <img src='".$foto['endereco_arquivo']."' width:100%; height: auto> <br> </center>";
+	      			  echo "<center> <img class='img-fluid' src='".$foto['endereco_arquivo']."'> <br> </center>";
 	    			} else if ($foto['tipo_arquivo'] == "audio"){
 	     				 echo "<audio autoplay='autoplay' controls='controls'>
 	             			 		<source src='".$foto['endereco_arquivo']."'/>

@@ -18,7 +18,7 @@ $result = mysqli_query($conectar, $sql);
 if(isset($_FILES['foto'])){
         
         //arquivos permitidos
-        $extensoes_permitidas = array("png", "jpeg", "jpg", "mp3", "ogg");
+        $extensoes_permitidas = array("png", "jpeg", "jpg", "mp3", "ogg", "JPG");
         $quantidadeArquivos = count($_FILES['foto']['name']);
         $contador = 0;
 
@@ -59,9 +59,7 @@ if(isset($_FILES['foto'])){
 $contador++;    
 }
 }
-   if($_SESSION['tipo'] == 0 ){ 
-        header('location:home_adm.php'); // página inicial do adm                
-   }else if($_SESSION['tipo'] == 1){
-        header('location:home_contribuidor.php');// arquivo da página incial
-    }
+
+        header('location:perfil.php'); // página inicial do adm                
+   
 ?>

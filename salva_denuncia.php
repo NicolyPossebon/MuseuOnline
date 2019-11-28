@@ -23,8 +23,8 @@
  	}
 
  	if($_SESSION['tipo'] == 1){
- 		header('location:home_contribuidor.php');
+ 		header('location:1960.php');
  	}else {
- 		header('location:home_adm.php');
+ 		header('location:1960.php');
  	}
 ?>

@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>EDITAR FOTO</title>
-   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<?php
-		session_start();
-		include "conexao.php";
+<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <title>EDITAR
+FOTO</title> <link rel="stylesheet"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+crossorigin="anonymous"> <?php session_start(); include "conexao.php";
 
 	//Teste para não deixar ninguem não logado entrar
     if(!$_SESSION['usuario']) {
@@ -41,15 +37,20 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
 
         <?php
-        if($_SESSION['tipo']  == 1){
-          echo "<a class='navbar-brand pl-2' href='home_contribuidor.php'>";
-        } else {
-          echo "<a class='navbar-brand pl-2' href='home_adm.php'>";
-        }
-        ?>
-            <img src="logo.png" width="55" height="55" class="d-inline-block" alt="">
-            <span class="">Era Uma Vez No IFFar - Fw</span>
-          </a>
+
+           if($_SESSION['tipo'] == 1){
+              echo "<a class='navbar-brand pl-2' href='home_contribuidor.php'>
+            <img src='logo.png' width='55' height='55' class='d-inline-block'>
+            <span class=''>Era Uma Vez No IFFar - Fw</span>
+          </a>";
+            }else {
+             echo "<a class='navbar-brand pl-2' href='home_adm.php'>
+            <img src='logo.png' width='55' height='55' class='d-inline-block' alt=''>
+            <span class=''>Era Uma Vez No IFFar - Fw</span>
+          </a>";
+            }
+
+            ?>
 
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação" style="background-color: #C0C0C0;">
           <span class="navbar-toggler-icon"></span>
@@ -66,13 +67,13 @@
   </div>
 </nav>
 
-	<div class="container d-flex justify-content-center" style="padding-top: 30px">
+	<div class="container d-flex justify-content-center" style="padding-top: 80px">
             <div class="form align-items-center fundo col-auto">
 
             <form method="POST" action="salva_edicao_foto.php" enctype="multipart/form-data">
             <div class="col-auto">
             <center><h2>FOTO</h2></center>
-            <center><img src="<?php echo $user['foto'];?>" style=" width:100%; height: auto" ></center>
+            <center><img src="<?php echo $user['foto'];?>" style=" width:100%; height: auto"></center>
             <br><input type="file" name="foto">
             <br><input type="hidden" name="imagem" class="form-control" value="<?php echo $user['foto']?>">
             </div>
